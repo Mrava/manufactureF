@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="juinfo" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="login" class="struts.intercepor.LoginInterceptor"></interceptor>
+			<interceptor name="list" class="struts.intercepor.ListInterceptor">
+				<param name="includeMethods">add,edit,addBatch,list,save,insert,update,delete</param>
+			</interceptor>
+
+			<interceptor-stack name="default">
+				<interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
+				<interceptor-ref name="login"></interceptor-ref>
+			</interceptor-stack>
+			<interceptor-stack name="noneLogin">
+				<interceptor-ref name="paramsPrepareParamsStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="default"></default-interceptor-ref>
+		
+		<global-results>
+			<result name="login">/system/login.jsp</result>
+		</global-results>
+
+		<action name="menu" class="MenuAction" method="findMenu">
+			<result name="success">/main/index.jsp</result>
+		</action>
+		
+		<action name="editMenu" class="EditMenuAction" method="list">
+			<result name="success">/main/MenuLists.jsp</result>
+			<result type="redirectAction" name="list" >
+				<param name="actionName">editMenu</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="edit">/main/MenuEdit.jsp</result>
+			<result name="add">/main/MenuEdit.jsp</result>
+		</action>
+
+		<action name="login" class="LoginAction" method="logining">
+			<result name="logining">/system/login.jsp</result>
+			<result name="error">/system/login.jsp</result>
+			<result name="logined" type="redirectAction">
+				<param name="actionName">menu</param>
+				<param name="namespace">/</param>
+			</result>
+			
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+
+		<action name="bom" class="BomAction" method="list">
+			<result name="success">/info/bom/bom_list.jsp</result>
+			<result name="list">/info/bom/bom_list.jsp</result>
+			<result name="add">/info/bom/bom_edit.jsp</result>
+			<result name="edit">/info/bom/bom_edit.jsp</result>
+			
+			<interceptor-ref name="default"></interceptor-ref>
+			<interceptor-ref name="list">
+				<param name="validatorClass">BomValidator</param>
+			</interceptor-ref>
+		</action>
+
+		<action name="bomRelation" class="BomRelationAction" method="list">
+			<result name="success">/info/bom/bomRelation_list.jsp</result>
+			<result name="list">/info/bom/bomRelation_list.jsp</result>
+			<result name="add">/info/bom/bomRelation_edit.jsp</result>
+			<result name="edit">/info/bom/bomRelation_edit.jsp</result>
+			
+			<interceptor-ref name="default"></interceptor-ref>
+			<interceptor-ref name="list">
+				<param name="validatorClass">BomRelationValidator</param>
+			</interceptor-ref>
+		</action>
+
+
+		<action name="bomMaterial" class="BomMaterialAction" method="list">
+			<result name="list">/info/bom/bomMaterial_list.jsp</result>
+		</action>
+
+
+		<action name="custom" class="CustomAction" method="list">
+			<result name="success">/info/custom/custom_list.jsp</result>
+			<result name="list">/info/custom/custom_list.jsp</result>
+			<result name="add">/info/custom/custom_edit.jsp</result>
+			<result name="edit">/info/custom/custom_edit.jsp</result>
+		</action>
+
+		<action name="makePlan" class="MakePlanAction" method="list">
+			<result name="success">/make/plan/make_list.jsp</result>
+			<result name="list">/make/plan/make_list.jsp</result>
+			<result name="add">/make/plan/make_add.jsp</result>
+			<result name="edit">/make/plan/make_edit.jsp</result>
+			
+			<interceptor-ref name="default"></interceptor-ref>
+			<interceptor-ref name="list">
+				<param name="validatorClass">MakePlanValidator</param>
+			</interceptor-ref>
+		</action>
+
+		<action name="materialPlan" class="MaterialPlanAction" method="list">
+			<result name="success">/material/plan/material_list.jsp</result>
+			<result name="list">/material/plan/material_list.jsp</result>
+			<result name="edit">/material/plan/material_edit.jsp</result>
+			<result name="add">/material/plan/material_edit.jsp</result>
+			<result name="addBatch">/material/plan/material_batch.jsp</result>
+			
+		</action>
+
+		<action name="provider" class="ProviderAction" method="list">
+			<result name="success">/info/provider/provider_list.jsp</result>
+			<result name="list">/info/provider/provider_list.jsp</result>
+			<result name="edit">/info/provider/provider_edit.jsp</result>
+			<result name="add">/info/provider/provider_edit.jsp</result>
+			
+		</action>
+
+		<action name="user" class="UserAction" method="list">
+			<result name="success">/info/user/user_list.jsp</result>
+			<result name="list">/info/user/user_list.jsp</result>
+			<result name="edit">/info/user/user_edit.jsp</result>
+			<result name="add">/info/user/user_edit.jsp</result>
+			
+		</action>
+
+		<action name="stockFuture" class="StockFutureAction" method="list">
+			<result name="list">/stock/stock_future.jsp</result>
+		</action>
+
+		<action name="stock" class="StockAction" method="list">
+			<result name="list">/stock/stock_list.jsp</result>
+			<result name="add">/stock/stock_edit.jsp</result>
+			<result name="edit">/stock/stock_edit.jsp</result>
+		</action>
+
+		<action name="stockTake" class="StockTakeAction" method="list">
+			<result name="list">/stockbill/stockTake_list.jsp</result>
+			<result name="add">/stockbill/stockTake_edit.jsp</result>
+			
+			
+		</action>
+		
+		<action name="stockBought" class="StockBoughtAction" method="list">
+			<result name="list">/stockbill/stockBought_list.jsp</result>
+			<result name="addBatch">/stockbill/stockBought_edit.jsp</result>
+			<result name="add">/stockbill/stockBought_singlEdit.jsp</result>
+			<result name="edit">/stockbill/stockBought_singlEdit.jsp</result>
+			
+			<interceptor-ref name="default"></interceptor-ref>
+		</action>
+		<action name="stockArrange" class="StockArrangeAction" method="list">
+			<result name="list">/stock/stock_arrange.jsp</result>
+			
+			<interceptor-ref name="noneLogin"></interceptor-ref>		
+		</action>
+	</package>
+</struts>    

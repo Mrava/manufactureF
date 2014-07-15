@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {min-width:900px;margin:0;padding:0px 20px;font-family: 'Microsoft Yahei', Arial, Simsun, sans-serif !important;font-size:12px;color:#565656;}
+ul {margin:0;padding:0;list-style:none;display:inline;_display:block;+display:block;}
+a {color:#fff;text-decoration:none;outline:0 none;}
+a:hover {color:#ff0000; text-decoration:none;}
+
+/* userlist */
+.listtit {width:100%;height:55px;display:block;}
+.listtit h3 {width:22px;height:22px;display:block;float:left;margin-top:16px;background:url(/main/images/list.png) no-repeat;}
+.listtit h2 {width:22px;height:22px;display:block;float:left;margin-top:16px;background:url(/main/images/add.png) no-repeat;}
+
+.listtit b {height:55px;display:block;float:left;font-size:14px;text-align:center;line-height:55px;padding:0px 20px;}
+.listtit span {width:350px;height:30px;display:block;float:left;border:1px #ccc solid;border-radius:5px;margin-top:12px;line-height:30px;}
+.listtit span input {border:0;width:300px;height:28px;line-height:28px;color:#ccc;margin-left:10px;float:left;}
+.listtit span i {width:20px;height:20px;display:block;float:right;margin:5px 5px 0px 0px;background:url(/main/images/icon_search.png) no-repeat; cursor:pointer;}
+.listtit a {width:88px;height:28px;display:block;float:right;background:url(/main/images/btnbg_add.png) no-repeat;line-height:28px;text-align:center;margin-top:15px;font-size:14px;font-weight:bold;color:#fff;}
+.listtit a:hover {background:url(/main/images/btnbg_add_h.png) no-repeat;color:#fff;}
+
+
+.listcon {width:100%;font-size:14px;}
+.listcon table {width:100%;}
+.listcon td {height:24px;background:#fff;text-align:center;line-height:24px;}
+.listcon table a { text-decoration:underline;}
+.listcon a {padding:0px 5px;color:#888;}
+.listcon a:hover {color:red;}
+.listcon td.titletd {background:#eff2f7;height:30px;font-size:14px;font-weight:bold;}
+.listcon a.view {color:#7fb6ff;}
+
+.listcon_future {width:99%;font-size:14px;display:block;padding:0;margin:0;}
+.listcon_future table {height:120px;float:left;white-space:nowrap;overflow:hidden;}
+.listcon_future td {background:#fff;text-align:center;line-height:18px;padding:0;margin:0; white-space:nowrap;border-bottom:1px solid #fff;border-right:1px solid #fff;}
+.listcon_future td.titletd {background:#ff9900;font-size:12px;font-weight:bold;padding:0px 10px;}
+.listcon_future td.titletd0 {background:#eff2f7;font-size:12px;padding:0px 10px;width:160px;height:99px;display:block; white-space:normal;}
+.listcon_future td.titletd1 {background:#eff2f7;width:50px;font-size:12px;font-weight:bold;padding:0px 10px;}
+.listcon_future td.titletd2 {background:#ff9900;font-size:12px;font-weight:bold;padding:0px 10px;}
+.listcon_future td.titletd3 {background:#eff2f7;font-size:12px;padding:0px 10px;}
+
+.listcon_future td.titletd4 {background:#eff2f7;height:18px;line-height:18px;font-size:14px;padding:0px 7px;width:60px;}
+
+
+.future_dataTable td {background:#f5f5f5;height:18px;line-height:18px;font-size:14px;padding:0px 7px;}
+
+.gopage {margin-top:5px;float:right;}
+.gopage input {width:40px;height:20px;line-height:20px;}
+.gopage font {padding:3px 5px;background:#eff2f7;}
+.gopage a.btn_gopage {background:#5d7ba9;padding:5px 10px;color:#fff; font-family:Arial, Helvetica, sans-serif;font-size:14px;margin-right:5px;}
+.gopage a.btn_gopage:hover {background:#336699;}
+.gopage b.btn_gopage {background:#5d7ba9;padding:5px 10px;color:#fff; font-family:Arial, Helvetica, sans-serif;font-size:14px;margin-right:5px; cursor:pointer;}
+.gopage b.btn_gopage:hover {background:#336699;}
+
+.line {width:100%;height:1px;line-height:1px;display:block;background:#f5f5f5;margin-bottom:20px;overflow:hidden;}
+.wwFormTable {margin:0 auto;padding-top:20px;}
+.wwFormTable td {height:40px;}
+.wwFormTable label {height:24px;padding-right:10px;line-height:24px;}
+.wwFormTable input {width:250px;border:1px #ccc solid;border-radius:5px;height:30px;line-height:30px;padding-left:10px;}
+
+.wwFormTable span {padding:3px 5px;display:block;float:left;background:#f5f5f5;text-align:center;line-height:20px;}
+.wwFormTable input.quantity {width:50px;border:1px #ccc solid;border-radius:5px;height:20px;line-height:20px;padding-left:10px;float:right;}
+.wwFormTable input[type=submit] {width:263px;}
+.td_control {width:250px;}
+
+#quantity_table td.tit {height:20px;text-align:center;background:#F5F5F5;line-height:24px;font-size:bold;margin-right:2px;border-right:2px solid #fff;border-bottom:2px solid #CCC;}
+#quantity_table input {width:138px;margin-right:2px;}
+
+
+#quantity_table1 td.tit {width:135px;height:20px;display:block;text-align:center;background:#F5F5F5;line-height:24px;font-size:bold;margin-right:2px;border-right:2px solid #fff;border-bottom:2px solid #CCC;}
+#quantity_table1 td {text-align:center;border-bottom:1px solid #f2f2f2;}
+#quantity_table1 input {width:100px;margin-right:2px;}
+.controlbar {clear:both;display:block;width:100%;height:30px;}
+.controlbar input {height:30px;text-align:30px;background:none;border:1px #ccc solid;font-size:12px;}
+.searchcode {background:#ffffcc;}
+/*input 检索功能*/
+.bbsearch {display:none;padding:0px;border:2px solid #fff; position:absolute;background:#d7e7f7;}
+.bbsearch li.dat {display:block;cursor:pointer;color:#000;width:100%;height:30px;font-weight:500;border-bottom:1px solid #000;padding:4px 0px;}
+.bbsearch li.tit {display:block;font-weight:bold;color:#fff;width:100%;height:30px;line-height:30px;background:#444;}
+.bbsearch li.dat:hover ,#bb li.dat_hover {color:#000;background:#F4F4F4;}
+.bbsearch li font {width:33%;min-height:30px;display:block;float:left;text-align:center;font-size:12px; white-space: normal;}
+
+#bb_item1 {top:266px;_top:246px;+top:246px;z-index:999;}
+#bb_item2 {top:310px;_top:290px;+top:290px;z-index:999;}
+#bb_item3 {top:354px;_top:334px;+top:334px;z-index:999;}
+
+#bb_stock1,#bb_material1,#bb_makeadd1 {top:131px;_top:111px;+top:111px;z-index:999;}
+#bb_stock2,#bb_material2,#bb_makeadd2 {top:175px;_top:155px;+top:155px;z-index:999;}
+#bb_stock3,#bb_material3,#bb_makeadd3 {top:219px;_top:199px;+top:199px;z-index:999;}
+
+#bb_make {top:175px;_top:155px;+top:155px;z-index:999;}
+#billdiv {top:175px;_top:155px;+top:155px;z-index:999;}
+
+
+
+

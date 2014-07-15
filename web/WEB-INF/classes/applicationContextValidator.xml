@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- validators -->
+
+	<bean id="BomValidator" class="struts.validator.BomValidator">
+		<property name="dao" ref="BomDAO"></property>
+	</bean>
+	<bean id="BomRelationValidator" class="struts.validator.BomRelationValidator">
+		<property name="bomRelationDAO" ref="BomRelationDAO"></property>
+	</bean>
+	<bean id="CustomValidator" class="struts.validator.CustomValidator">
+		<property name="customDAO" ref="CustomDAO"></property>
+	</bean>
+	<bean id="UserValidator" class="struts.validator.UserValidator">
+		<property name="userDAO" ref="UserDAO"></property>
+	</bean>
+	<bean id="ProviderValidator" class="struts.validator.ProviderValidator">
+		<property name="providerDAO" ref="ProviderDAO"></property>
+	</bean>
+	<bean id="MakePlanValidator" class="struts.validator.MakePlanValidator">
+		<property name="makePlanDAO" ref="MakePlanDAO"></property>
+	</bean>
+	<bean id="MaterialPlanValidator" class="struts.validator.MaterialPlanValidator">
+		<property name="materialPlanDAO" ref="MaterialPlanDAO"></property>
+	</bean>
+	<bean id="StockValidator" class="struts.validator.StockValidator">
+		<property name="dao" ref="StockDAO"></property>
+	</bean>
+
+
+</beans>

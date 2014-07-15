@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+
+
+	<table name="STUDENT" schema="TEST" class="hibernate.dao.Student">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="BOM" schema="JUINFO" class="hibernate.dao.Bom">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="USERS" schema="JUINFO" class="hibernate.dao.User">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="BOM_RELATION" schema="JUINFO"
+		class="hibernate.dao.BomRelation">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="CUSTOM" schema="JUINFO" class="hibernate.dao.Custom">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="PROVIDER" schema="JUINFO"
+		class="hibernate.dao.Provider">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="MAKEPLAN" schema="MAKE"
+		class="hibernate.dao.MakePlan">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="METERAILPLAN" schema="MAKE"
+		class="hibernate.dao.MeterailPlan">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="MATERIALPLAN" schema="MAKE"
+		class="hibernate.dao.MaterialPlan">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="STOCK_FUTURE" schema="MAKE"
+		class="hibernate.dao.StockFuture">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+		<column name="QUANTITY" type="java.lang.Integer"></column>
+		<column name="STOCK_TYPE" type="java.lang.Integer"></column>
+		<column name="PLAN_TYPE" type="java.lang.Integer"></column>
+		<column name="CNT" type="java.lang.Integer"></column>
+		<column name="BOM_CODE"></column>
+	</table>
+	<table name="BOM_MATERIAL" schema="JUINFO"
+		class="hibernate.dao.BomMaterial">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="STOCK" schema="MAKE" class="hibernate.dao.Stock">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="BOM_TYPE" schema="JUINFO"
+		class="hibernate.dao.BomType">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="MAKEMATERIAL" schema="MAKE"
+		class="hibernate.dao.MakeMaterial">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="BILL_TYPE" schema="STOCK"
+		class="hibernate.dao.BillType">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="STOCKBILL_ITEM" schema="STOCK"
+		class="hibernate.dao.StockBillItem">
+		<primary-key>
+			<generator class="sequence"></generator>
+		</primary-key>
+	</table>
+	<table name="STOCK_ARRANGE" schema="STOCK"
+		class="hibernate.dao.stock.StockArrange">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="STOCK_BOUGHT" schema="STOCK"
+		class="hibernate.dao.stock.StockBought">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+<table name="STOCK_PROCESS" schema="STOCK"
+	class="hibernate.dao.stock.StockProcess">
+	<primary-key>
+		<generator class="sequence"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

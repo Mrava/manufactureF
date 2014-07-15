@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- struts.actions -->
+
+	<bean id="BomAction" class="struts.action.BomAction" scope="prototype">
+		<property name="dao" ref="BomDAO"></property>
+		<property name="typeDAO" ref="BomTypeDAO"></property>
+	</bean>
+	<bean id="BomRelationAction" class="struts.action.BomRelationAction"
+		scope="prototype">
+		<property name="dao" ref="BomRelationDAO"></property>
+		<property name="bomDAO" ref="BomDAO"></property>
+	</bean>
+	<bean id="BomMaterialAction" class="struts.action.BomMaterialAction"
+		scope="prototype">
+		<constructor-arg name="dao" ref="BomMaterialDAO"></constructor-arg>
+	</bean>
+
+	<bean id="StockAction" class="struts.action.StockAction" scope="prototype">
+		<property name="dao" ref="StockDAO"></property>
+	</bean>
+	<bean id="CustomAction" class="struts.action.CustomAction" scope="prototype">
+		<property name="dao" ref="CustomDAO"></property>
+	</bean>
+
+	<bean id="UserAction" class="struts.action.UserAction" scope="prototype">
+		<property name="dao" ref="UserDAO"></property>
+	</bean>
+
+	<bean id="ProviderAction" class="struts.action.ProviderAction"
+		scope="prototype">
+		<property name="dao" ref="ProviderDAO"></property>
+	</bean>
+
+
+	<bean id="MakePlanAction" class="struts.action.MakePlanAction"
+		scope="prototype">
+		<property name="dao" ref="MakePlanDAO"></property>
+		<property name="materialDAO" ref="MakeMaterialDAO"></property>
+	</bean>
+
+	<bean id="MaterialPlanAction" class="struts.action.MaterialPlanAction"
+		scope="prototype">
+		<property name="dao" ref="MaterialPlanDAO"></property>
+	</bean>
+	<bean id="StockFutureAction" class="struts.action.StockFutureAction"
+		scope="prototype">
+		<property name="dao" ref="StockFutureDAO"></property>
+	</bean>
+	<bean id="LoginAction" class="juinfo.struts2.action.LoginAction"
+		scope="prototype">
+		<property name="dao" ref="UserDAO"></property>
+	</bean>
+
+	<bean id="StockTakeAction" class="struts.action.stock.StockTakeAction"
+		scope="prototype">
+		<property name="dao" ref="StockBillItemDAO"></property>
+	</bean>
+	<bean id="StockBoughtAction" class="struts.action.stock.StockBoughtAction"
+		scope="prototype">
+		<property name="dao" ref="StockBillItemDAO"></property>
+	</bean>
+	<bean id="StockArrangeAction" class="struts.action.StockArrangeAction"
+		scope="prototype">
+		<property name="dao" ref="StockArrangeDAO"></property>
+	</bean>
+
+</beans>
